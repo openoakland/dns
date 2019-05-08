@@ -6,6 +6,8 @@ jobs:
         entrypoint: ["/bin/sh"]
     steps:
       - checkout
+      - run: terraform init -backend=false
+      - run: terraform validate -check-variables=false
       - run: terraform plan
 
 
