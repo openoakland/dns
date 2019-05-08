@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: hashicorp/terraform
+        entrypoint: /bin/sh -c
+    steps:
+      - checkout
+      - run: terraform plan
+
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - build
