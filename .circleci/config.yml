@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: hashicorp/terraform
-        entrypoint: /bin/sh -c
+        entrypoint: ["/bin/sh"]
     steps:
       - checkout
       - run: terraform plan
